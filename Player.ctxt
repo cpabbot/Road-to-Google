@@ -1,0 +1,27 @@
+#BlueJ class context
+comment0.target=Player
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Player\ here.\r\n\r\n\ Marquis\ and\ Cameron's\ super\ cool\ project\r\n\ v0.1\ pre-Alpha\ unreleased\r\n\ Spring\ 2018\r\n\ AP\ Computer\ Science\ A\ final\ project\r\n
+comment1.params=theName\ theMoney\ theColor
+comment1.target=Player(java.lang.String,\ double,\ java.awt.Color)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Player\r\n
+comment2.params=numMoves
+comment2.target=void\ moveLocation(int)
+comment3.params=
+comment3.target=double\ getMoney()
+comment3.text=\r\n\ returns\ value\ of\ int\ money\ of\ player\r\n
+comment4.params=amount
+comment4.target=double\ changeMoney(double)
+comment4.text=\r\n\ sets\ value\ of\ int\ money\ of\ player\ to\ plus/minus(if\ negative)\ amount\r\n
+comment5.params=prop
+comment5.target=void\ buyProperty(Property)
+comment5.text=\r\n\ adds\ prop\ to\ list\ ownes\ of\ Player\r\n\ @prop\ property\ to\ change\ ownership\r\n\ \r\n
+comment6.params=prop
+comment6.target=void\ payRent(Property)
+comment6.text=\r\n\ subtracts\ rent\ from\ Property\ prop\ from\ Player\ money\r\n\ \ maybe\ we\ should\ do\ this\ form\ Property\ Class????\r\n
+comment7.params=
+comment7.target=java.lang.String\ getName()
+comment8.params=
+comment8.target=int\ getLocation()
+comment9.params=
+comment9.target=java.awt.Color\ getColor()
+numComments=10
