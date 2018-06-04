@@ -17,8 +17,8 @@ public class Player
     private double money;
     private Color color;
     private int location;
-    private ArrayList<Space> ownes;  // @review is this really necessary though???
-    
+    private ArrayList<Property> ownes;  // @review is this really necessary though???
+    private boolean passedGo;
     /**
      * Constructor for objects of class Player
      */
@@ -27,13 +27,18 @@ public class Player
        name = theName;
        money = theMoney;
        color = theColor;
-       ownes = new ArrayList<Space>();
+       ownes = new ArrayList<Property>();
+       passedGo = false;
     }
     
     public void moveLocation(int numMoves) {
         location += numMoves;
         if(location >= 36) {
             location -= 36; // reset to 0 when fully around board / passing go
+            passedGo = true;
+        }
+         if(location < 0) {
+            location += 36; // reset to 0 when fully around board / passing go
         }
     }
     
@@ -61,7 +66,7 @@ public class Player
     public void buyProperty(Property prop)
     {
        ownes.add(prop);
-       prop.setOwnership(this);
+       //prop.setOwnership(this);
     }
     
     /**
@@ -73,6 +78,9 @@ public class Player
        money = money - prop.calculateRent();
     }
     
+    public ArrayList<Property> getOwnes() { return ownes; }
+    public void setPassedGo(boolean boo) { passedGo = boo; }
+    public boolean getPassedGo() { return passedGo; }
     public String getName() { return name; }
     public int getLocation() { return location; }
     public Color getColor() { return color; }

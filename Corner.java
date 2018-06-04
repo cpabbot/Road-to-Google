@@ -14,13 +14,15 @@ public class Corner extends Space
     //private int x;
     //private int y, height, width;
     private Color color;
+    private String iAm;
     /**
      * Constructor for objects of class Corner
      */
-    public Corner(Color col)
+    public Corner(Color col, String stri)
     {
         // initialise instance variables
         color = col;
+        iAm = stri;
     }
 
    /**
@@ -33,5 +35,26 @@ public class Corner extends Space
         // fill color
         window.setColor(color);
         window.fillRect(x,y,width,height);
+    }
+    
+   public void act(Player p1)
+   {
+       if(iAm.equals("Start"))
+       {
+           p1.changeMoney(200.0);
+        }
+        else if(iAm.equals("Jail"))
+        {
+            //waste turn
+        }
+        else if(iAm.equals("Free Parking"))
+        {
+            //changeMoney by money in free parking
+        }
+        else if(iAm.equals("Go to jail"))
+        {
+            //moves player to jail
+        }
+       
     }
 }

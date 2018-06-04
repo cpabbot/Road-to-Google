@@ -27,6 +27,8 @@ public class Screen extends JFrame implements ActionListener
     private static Menu menu;
     private static Chance chance;
     
+    private static Color grey = new Color(128,128,128);
+    
     // these 3 fields are used in the main method and must be instiated before constructor
     private static ArrayList<Player> players = new ArrayList<Player>();
     private static Color[] colors = {Color.BLACK, Color.BLUE, Color.RED, Color.GREEN, Color.ORANGE};
@@ -55,6 +57,7 @@ public class Screen extends JFrame implements ActionListener
         
         board = new Board(HEIGHT, players);
         menu = new Menu(400, HEIGHT);
+        chance = new Chance();
         main.add(board);
         main.add(menu);
         
@@ -156,7 +159,8 @@ public class Screen extends JFrame implements ActionListener
     public void roll() {
         currentPlayer = players.get(cpi);
         // move the player a random number of spaces 1-12 inclusive
-        int rollNum = (int)(Math.random()*12)+1;
+       // int rollNum = (int)(Math.random()*12)+1;
+        int rollNum = 1;
         menu.addOutputText(players.get(cpi).getName() + " rolled a " + rollNum);
         roll.setEnabled(false);
         currentPlayer.moveLocation(rollNum);
@@ -165,7 +169,12 @@ public class Screen extends JFrame implements ActionListener
         // set the details of the space the player has landed on
         int currentLocation = players.get(cpi).getLocation();
         currentSpace = board.getSpaceAt(currentLocation);
-        
+        if(currentPlayer.getPassedGo() == true)
+        {
+            currentPlayer.changeMoney(200.0);
+            currentPlayer.setPassedGo(false);
+            menu.addOutputText(players.get(cpi).getName() + " gets $200 for passing go!");
+        }
         // if  I land on a property
         if(currentSpace.getClass().getName().equals("Property"))
         {
@@ -181,13 +190,21 @@ public class Screen extends JFrame implements ActionListener
                 pay.setEnabled(true);
             }
         }
-        else { // either a Chance or something
-            //do something
+         else if(currentSpace.getClass().getName().equals("Chance"))
+        {
+            //info += chance.chooseCard(currentPlayer);
+            menu.addOutputText(((Chance)currentSpace).chooseCard(currentPlayer));
+            board.repaint();
+            end.setEnabled(true);
+        }
+        else 
+        {
             end.setEnabled(true);
         }
         
         
-        menu.setPlayerInfoText(getInfo(), currentSpace.getColor());
+        
+       menu.setPlayerInfoText(getInfo(), currentSpace.getColor());
     }
     
     public String getInfo() {
@@ -210,14 +227,13 @@ public class Screen extends JFrame implements ActionListener
                 info += "\nRent Cost: $" + currentProperty.calculateRent();
             }
         }
-        else { // either a Chance or something
-            //do something
+        else if(currentSpace.getClass().getName().equals("Chance"))
+        {
+            //info += chance.chooseCard(currentPlayer);
+            //menu.addOutputText(chance.chooseCard(currentPlayer));
         }
         
-        if(currentSpace.getClass().getName().equals("Chance"))
-        {
-            info += chance.chooseCard(currentPlayer);
-        }
+        
         
         return info;
     }
@@ -231,6 +247,7 @@ public class Screen extends JFrame implements ActionListener
         currentPlayer.changeMoney(-((Property)currentSpace).getPrice()); //subtracts value of property from Player money
         menu.addOutputText(currentPlayer.getName() + " bought " + currentSpace.getName() + " for $" + ((Property)currentSpace).getPrice()); //says it in chat
         menu.setPlayerInfoText(getInfo(), currentSpace.getColor());
+        currentPlayer.buyProperty((Property)currentSpace);
         
         buy.setEnabled(false);
         end.setEnabled(true);
@@ -241,10 +258,30 @@ public class Screen extends JFrame implements ActionListener
      */
     public void pay() {
         Player otherPlayer = ((Property)currentSpace).getOwnership();
-        currentPlayer.changeMoney(-((Property)currentSpace).calculateRent()); //subtract my money
-        otherPlayer.changeMoney(((Property)currentSpace).calculateRent()); // add their money
+        if(((Property)currentSpace).getColor() == board.getGrey()) //grey color for railroads
+        {
+             int count = 0;
+             for(int i = 0; i<otherPlayer.getOwnes().size(); i++)
+             {
+                
+                if((otherPlayer.getOwnes().get(i).getColor() == board.getGrey())) //gry color for railroads
+                {
+                    count++;
+                }
+                
+             }
+             
+             currentPlayer.changeMoney(-((Property)currentSpace).calculateRent()*count); //subtract my money
+             otherPlayer.changeMoney(((Property)currentSpace).calculateRent()*count); // add their money
+             menu.addOutputText(currentPlayer.getName() + " just payed " + ((Property)currentSpace).calculateRent()*count + " in rent to " + otherPlayer.getName());//says in chat money lost
+            }
+        else if(currentSpace.getClass().getName().equals("Property"))
+        {
+           currentPlayer.changeMoney(-((Property)currentSpace).calculateRent()); //subtract my money
+           otherPlayer.changeMoney(((Property)currentSpace).calculateRent()); // add their money
+           menu.addOutputText(currentPlayer.getName() + " just payed $" + ((Property)currentSpace).calculateRent() + " in rent to " + otherPlayer.getName());//says in chat money lost
+        }
         
-        menu.addOutputText(currentPlayer.getName() + " just payed $" + ((Property)currentSpace).calculateRent() + " in rent to " + otherPlayer.getName());//says in chat money lost
         menu.setPlayerInfoText(getInfo(), currentSpace.getColor());
         
         pay.setEnabled(false);
@@ -271,6 +308,48 @@ public class Screen extends JFrame implements ActionListener
             }
         }
         return col;
+    }
+    
+    public boolean canBuyStocks()
+    {
+        int count = 0;
+        /*for(int i = 0; i<board.getSpaces().size(); i++)
+        {
+            if(board.getSpaces().get(i).getClass().getName().equals("Property"))
+            {
+                Property space = (Property)board.getSpaces().get(i);
+                if(space.getOwnership() == currentPlayer)
+                {
+                    
+                }
+            }
+        } */
+        for(int i = 0; i<currentPlayer.getOwnes().size(); i++)
+        {
+            for(int j = i+1; i<currentPlayer.getOwnes().size(); j++)
+            {
+                if(currentPlayer.getOwnes().get(i).getColor()
+                             == currentPlayer.getOwnes().get(j).getColor())
+                {
+                    count++;
+                }
+                if(currentPlayer.getOwnes().get(i).getColor() == board.getPurple() && count == 1) //color purple
+                {
+                    return true;
+                }
+                if(currentPlayer.getOwnes().get(i).getColor() == board.getBlue() && count == 1) //color blue
+                {
+                    return true;
+                }
+                if(count == 2)
+                {
+                    return true;
+                }
+                
+            }
+            count = 0;
+        }
+        return false;
     }
     
     public int getScreenWidth() { return WIDTH; }
