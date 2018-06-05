@@ -80,62 +80,57 @@ public class Board extends JPanel
         int spaceX, spaceY;
         
         //----drawCorner 0 top left----//
-        spaces.get(0).draw(window,0,0,cornerSize,cornerSize);
+        spaces.get(0).draw(window,0,0,cornerSize,cornerSize,0);
        
         //-------top row--------//
         for(int i = 1; i < 9; i++) {
             spaceX = propSize*(i-1)+cornerSize;
             spaceY = y;
-            spaces.get(i).draw(window,spaceX,spaceY,propSize,propSize*2);
+            spaces.get(i).draw(window,spaceX,spaceY,propSize,propSize*2,0);
             spaces.get(i).setXY(spaceX,spaceY);
         }
         
         ///----draw corner 1 top right------//
         spaceX = propSize*(8)+cornerSize;
         spaceY = 0;
-         spaces.get(9).draw(window,spaceX,spaceY,cornerSize,cornerSize);
+         spaces.get(9).draw(window,spaceX,spaceY,cornerSize,cornerSize,1);
          spaces.get(9).setXY(spaceX,spaceY);
          
         //------right column-----//
         for(int i = 10; i < 18; i++) {
             spaceX = propSize*(8)+cornerSize;
             spaceY = propSize*(i%10)+cornerSize;
-            spaces.get(i).draw(window,spaceX,spaceY,propSize*2,propSize);
+            spaces.get(i).draw(window,spaceX,spaceY,propSize*2,propSize,1);
             spaces.get(i).setXY(spaceX,spaceY);
         }
         
         ///----draw corner 2 bottom right------//
         spaceX = propSize*(8)+cornerSize;
         spaceY = propSize*(8)+cornerSize;
-        spaces.get(18).draw(window,spaceX,spaceY,cornerSize,cornerSize);
+        spaces.get(18).draw(window,spaceX,spaceY,cornerSize,cornerSize,2);
         spaces.get(18).setXY(spaceX,spaceY);
         
         //------bottom row----//
         for(int i = 20; i < 28; i++) {
             spaceX = propSize*(7)+cornerSize-propSize*(i%10);
             spaceY = y+cornerSize+propSize*8;
-            spaces.get(i-1).draw(window,spaceX,spaceY,propSize,propSize*2);
+            spaces.get(i-1).draw(window,spaceX,spaceY,propSize,propSize*2,2);
             spaces.get(i-1).setXY(spaceX,spaceY);
         }
         
          ///----draw corner 3 bottom left------//
          spaceX = 0;
          spaceY = propSize*(8)+cornerSize;
-         spaces.get(27).draw(window,spaceX,spaceY,cornerSize,cornerSize);
+         spaces.get(27).draw(window,spaceX,spaceY,cornerSize,cornerSize,3);
          spaces.get(27).setXY(spaceX,spaceY);
          
         //-------left column-----//
          for(int i = 30; i < 38; i++) {
             spaceX = x;
             spaceY = y+cornerSize+propSize*7-propSize*(i%10);
-            spaces.get(i-2).draw(window,spaceX,spaceY,propSize*2,propSize);
+            spaces.get(i-2).draw(window,spaceX,spaceY,propSize*2,propSize,3);
             spaces.get(i-2).setXY(spaceX,spaceY);
         }
-        //spaces.get(10).draw(window,8*propSize+cornerSize,0,cornerSize,cornerSize);
-        
-        /*for(int i = 0; i<spaces.size(); i++) {
-            spaces.get(i).draw(window,30*i,y);
-        }*/
     }
     
     /**

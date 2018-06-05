@@ -38,8 +38,8 @@ public class Chance extends Space
      * @x x position on frame
      * @y y position on frame
      */
-    public void draw(Graphics window, int x, int y, int width, int height) {
-        super.draw(window,x,y,width,height);
+    public void draw(Graphics window, int x, int y, int width, int height, int side) {
+        super.draw(window,x,y,width,height, side);
         // fill color
         window.setColor(color);
         window.fillRect(x,y,width,height);

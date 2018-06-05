@@ -31,7 +31,7 @@ public abstract class Space
      * Draws the appropriate space on the board
      * Should be overriden by Property and other subclass objects
      */
-    public void draw(Graphics window, int x, int y, int w, int h) {
+    public void draw(Graphics window, int x, int y, int w, int h, int side) {
         // outline
         window.setColor(Color.BLACK);
         Graphics2D g2D = (Graphics2D) window;

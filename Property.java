@@ -41,11 +41,22 @@ public class Property extends Space
      * @x x position on frame
      * @y y position on frame
      */
-    public void draw(Graphics window, int x, int y, int width, int height) {
-        super.draw(window,x,y,width,height);
+    public void draw(Graphics window, int x, int y, int width, int height, int side) {
         // fill color
         window.setColor(color);
-        window.fillRect(x,y,width,height);
+        ////////////////window.fillRect(x,y,width,height);
+        if(side == 0) { // top
+            window.fillRect(x,y+(int)(0.75*height),width,(int)(0.25*height));
+        } else if(side == 1) { // right
+            window.fillRect(x,y,(int)(0.25*width),height);
+        } else if(side == 2) { // bottom
+            window.fillRect(x,y+(int)(0.75*height),width,(int)(0.25*height));
+        } else if(side == 3) { // left
+            window.fillRect(x,y+(int)(0.75*height),width,(int)(0.25*height));
+        }
+        // full space outline
+        super.draw(window,x,y,width,height,side);
+        // outline owner color
         if(ownership != null)
         {
             window.setColor(ownership.getColor());

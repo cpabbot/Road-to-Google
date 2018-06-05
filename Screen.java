@@ -10,8 +10,6 @@ import javax.swing.JButton;
 import java.util.ArrayList;
 import java.util.List;
 
-//test github change
-
 /**
  * Adds frame for graphics
  *
@@ -161,8 +159,7 @@ public class Screen extends JFrame implements ActionListener
     public void roll() {
         currentPlayer = players.get(cpi);
         // move the player a random number of spaces 1-12 inclusive
-       // int rollNum = (int)(Math.random()*12)+1;
-        int rollNum = 1;
+        int rollNum = (int)(Math.random()*12)+1;
         menu.addOutputText(players.get(cpi).getName() + " rolled a " + rollNum);
         roll.setEnabled(false);
         currentPlayer.moveLocation(rollNum);
@@ -204,9 +201,7 @@ public class Screen extends JFrame implements ActionListener
             end.setEnabled(true);
         }
         
-        
-        
-       menu.setPlayerInfoText(getInfo(), currentSpace.getColor());
+        menu.setPlayerInfoText(getInfo(), currentSpace.getColor());
     }
     
     public String getInfo() {
