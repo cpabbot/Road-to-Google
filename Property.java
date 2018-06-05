@@ -19,11 +19,11 @@ public class Property extends Space
     private Player ownership;
     private int houses;
     private boolean colorSet;
+    //////////////////////////////////hey
     
     public Property() {
         this(0, 0, Color.WHITE, null, "name");
-        houses = 0;
-        colorSet = false;
+        //lol
     }
     
     public Property(double thePrice, double theRent, Color theColor, Player theOwnership, String theName) {
