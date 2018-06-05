@@ -62,7 +62,7 @@ public class Property extends Space
             window.setColor(ownership.getColor());
             Graphics2D g2D = (Graphics2D) window;
             g2D.setStroke(new BasicStroke(5F));
-            window.drawRect(x,y,width,height);
+            window.drawRect(x+5,y+5,width-10,height-10);
         }
     }
     
