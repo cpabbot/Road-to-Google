@@ -50,9 +50,9 @@ public class Property extends Space
         } else if(side == 1) { // right
             window.fillRect(x,y,(int)(0.25*width),height);
         } else if(side == 2) { // bottom
-            window.fillRect(x,y+(int)(0.75*height),width,(int)(0.25*height));
+            window.fillRect(x,y,width,(int)(0.25*height));
         } else if(side == 3) { // left
-            window.fillRect(x,y+(int)(0.75*height),width,(int)(0.25*height));
+            window.fillRect(x+(int)(0.75*width),y,(int)(0.25*width),height);
         }
         // full space outline
         super.draw(window,x,y,width,height,side);
