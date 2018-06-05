@@ -35,7 +35,7 @@ public class Screen extends JFrame implements ActionListener
     private static String[] colorStrings = {"BLACK", "BLUE", "RED", "GREEN", "ORANGE"};
     
     private static String pName;
-    private static JButton roll, buy, pay, end;
+    private static JButton roll, buy, pay, stocks, end;
     private static int cpi; // current player index
     private static Player currentPlayer;
     private static Space currentSpace;
@@ -121,6 +121,10 @@ public class Screen extends JFrame implements ActionListener
         end = menu.getEndBtn();
         end.addActionListener(this);
         end.setActionCommand("end");
+        
+        stocks = menu.getStocksBtn();
+        stocks.addActionListener(this);
+        stocks.setActionCommand("end");
     }
     
     /**

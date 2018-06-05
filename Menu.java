@@ -24,7 +24,7 @@ public class Menu extends JPanel implements ActionListener
 {
     private int width;
     private int height;
-    private JButton roll, buy, pay, end;
+    private JButton roll, buy, pay, stocks, end;
     private JLabel h1;
     private JTextArea output, playerInfo;
     private String text;
@@ -106,6 +106,9 @@ public class Menu extends JPanel implements ActionListener
         this.add(end);
         //end.addActionListener(this);
         //end.setActionCommand("end");
+        
+        stocks = new JButton("Buy Stocks");
+        this.add(end);
     }
     
     /**
@@ -145,4 +148,5 @@ public class Menu extends JPanel implements ActionListener
     public JButton getBuyBtn() { return buy; }
     public JButton getPayBtn() { return pay; }
     public JButton getEndBtn() { return end; }
+    public JButton getStocksBtn() { return stock; }
 }
