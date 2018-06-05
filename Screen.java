@@ -186,6 +186,7 @@ public class Screen extends JFrame implements ActionListener
             currentProperty = (Property)currentSpace;
             if( currentProperty.getOwnership() == currentPlayer) { // if I own this
                 end.setEnabled(true);
+                stocks.setEnabled(true);
             }
             else if( currentProperty.getOwnership() == null) { // if no one owns it
                 buy.setEnabled(true);
@@ -311,6 +312,10 @@ public class Screen extends JFrame implements ActionListener
             }
         }
         return col;
+    }
+    
+    public void stocks() {
+        //currentProperty.changeH
     }
     
     public boolean canBuyStocks()
