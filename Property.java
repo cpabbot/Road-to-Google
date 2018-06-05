@@ -19,7 +19,6 @@ public class Property extends Space
     private Player ownership;
     private int stocks;
     private boolean colorSet;
-    //////////////////////////////////hey
     
     public Property() {
         this(0, 0, Color.WHITE, null, "name");
@@ -44,7 +43,6 @@ public class Property extends Space
     public void draw(Graphics window, int x, int y, int width, int height, int side) {
         // fill color
         window.setColor(color);
-        ////////////////window.fillRect(x,y,width,height);
         if(side == 0) { // top
             window.fillRect(x,y+(int)(0.75*height),width,(int)(0.25*height));
         } else if(side == 1) { // right
@@ -63,6 +61,19 @@ public class Property extends Space
             Graphics2D g2D = (Graphics2D) window;
             g2D.setStroke(new BasicStroke(5F));
             window.drawRect(x+5,y+5,width-10,height-10);
+        }
+        // draw stocks
+        window.setColor(Color.BLACK);
+        for(int i=0; i<stocks; i++) {
+            if(side == 0) { // top
+                window.fillRect(x+12*i,y+(int)(0.75*height),10,10);
+            } else if(side == 1) { // right
+                window.fillRect(x,y,10,10);
+            } else if(side == 2) { // bottom
+                window.fillRect(x,y,10,10);
+            } else if(side == 3) { // left
+                window.fillRect(x+(int)(0.75*width),y,10,10);
+            }
         }
     }
     
