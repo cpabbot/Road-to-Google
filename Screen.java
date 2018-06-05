@@ -138,6 +138,7 @@ public class Screen extends JFrame implements ActionListener
         buy.setEnabled(false);
         pay.setEnabled(false);
         end.setEnabled(false);
+        stocks.setEnabled(false);
     }
     
     /**
@@ -154,6 +155,7 @@ public class Screen extends JFrame implements ActionListener
         else if(buttonPressed.equals("buy")) { buy(); }
         else if(buttonPressed.equals("pay")) { pay(); }
         else if(buttonPressed.equals("end")) { end(); }
+        else if(buttonPressed.equals("stocks")) { end(); }
     }
     
     /**

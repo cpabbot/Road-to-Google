@@ -148,5 +148,5 @@ public class Menu extends JPanel implements ActionListener
     public JButton getBuyBtn() { return buy; }
     public JButton getPayBtn() { return pay; }
     public JButton getEndBtn() { return end; }
-    public JButton getStocksBtn() { return stock; }
+    public JButton getStocksBtn() { return stocks; }
 }
