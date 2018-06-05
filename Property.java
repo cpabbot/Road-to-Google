@@ -17,7 +17,7 @@ public class Property extends Space
     private double rent;
     private Color color;
     private Player ownership;
-    private int houses;
+    private int stocks;
     private boolean colorSet;
     //////////////////////////////////hey
     
@@ -32,7 +32,7 @@ public class Property extends Space
         rent = theRent;
         color = theColor;
         ownership = theOwnership;
-        houses = 0;
+        stocks = 0;
          colorSet = false;
     }
     
@@ -50,9 +50,9 @@ public class Property extends Space
         } else if(side == 1) { // right
             window.fillRect(x,y,(int)(0.25*width),height);
         } else if(side == 2) { // bottom
-            window.fillRect(x,y+(int)(0.75*height),width,(int)(0.25*height));
+            window.fillRect(x,y,width,(int)(0.25*height));
         } else if(side == 3) { // left
-            window.fillRect(x,y+(int)(0.75*height),width,(int)(0.25*height));
+            window.fillRect(x+(int)(0.75*width),y,(int)(0.25*width),height);
         }
         // full space outline
         super.draw(window,x,y,width,height,side);
@@ -67,31 +67,35 @@ public class Property extends Space
     }
     
      /**
-     * Based off number of houses calculates what rent for Property will be
+     * Based off number of stocks calculates what rent for Property will be
      */
     public double calculateRent()
     {
-        if(houses == 0)
+        if(stocks == 0)
         {
             if(colorSet)
             {
                return rent * 2;
             }
         }
-        else if(houses == 1) { return rent * 5; }
-        else if(houses == 2) { return rent * 15; }
-        else if(houses == 3) { return rent * 35; }
-        else if(houses == 4) { return rent * 55; }
+        else if(stocks == 1) { return rent * 5; }
+        else if(stocks == 2) { return rent * 15; }
+        else if(stocks == 3) { return rent * 35; }
+        else if(stocks == 4) { return rent * 55; }
         return rent;
     }
 
      /**
-     * increment number of houses by amount
-     * @amount num to incrememnt houses by
+     * increment number of stocks by amount
+     * @amount num to incrememnt stocks by
      */
-    public void changeHouses(int amount)
+    public void changeStocks(int amount)
     {
-        houses = houses + amount;
+        stocks = stocks + amount;
+    }
+    
+    public int getStockPrice() {
+        return (int)(price/4);
     }
     
     /**

@@ -108,7 +108,7 @@ public class Menu extends JPanel implements ActionListener
         //end.setActionCommand("end");
         
         stocks = new JButton("Buy Stocks");
-        this.add(end);
+        this.add(stocks);
     }
     
     /**

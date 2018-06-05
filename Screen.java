@@ -155,7 +155,7 @@ public class Screen extends JFrame implements ActionListener
         else if(buttonPressed.equals("buy")) { buy(); }
         else if(buttonPressed.equals("pay")) { pay(); }
         else if(buttonPressed.equals("end")) { end(); }
-        else if(buttonPressed.equals("stocks")) { end(); }
+        else if(buttonPressed.equals("stocks")) { stocks(); }
     }
     
     /**
@@ -221,6 +221,7 @@ public class Screen extends JFrame implements ActionListener
             currentProperty = (Property)currentSpace;
             if( currentProperty.getOwnership() == currentPlayer) { // if I own this
                 info += "\nProperty owned by " + currentPlayer.getName();
+                info += "\nHey you own this! Wanna buy stock boss?";
             }
             else if( currentProperty.getOwnership() == null) { // if no one owns it
                 info += "\nProperty not owned, can be bought!";
@@ -315,7 +316,8 @@ public class Screen extends JFrame implements ActionListener
     }
     
     public void stocks() {
-        //currentProperty.changeH
+        currentProperty.changeStocks(1);
+        currentPlayer.changeMoney(-100); //nees stock value
     }
     
     public boolean canBuyStocks()
