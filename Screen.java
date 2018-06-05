@@ -250,7 +250,6 @@ public class Screen extends JFrame implements ActionListener
     public void buy() {
         ((Property)currentSpace).setOwnership(currentPlayer); //changes ownership of property
         currentPlayer.changeMoney(-((Property)currentSpace).getPrice()); //subtracts value of property from Player money
-        menu.addOutputText(currentPlayer.getName() + " bought " + currentSpace.getName() + " for $" + ((Property)currentSpace).getPrice()); //says it in chat
         menu.setPlayerInfoText(getInfo(), currentSpace.getColor());
         currentPlayer.buyProperty((Property)currentSpace);
         
@@ -317,7 +316,8 @@ public class Screen extends JFrame implements ActionListener
     
     public void stocks() {
         currentProperty.changeStocks(1);
-        currentPlayer.changeMoney(-100); //nees stock value
+        currentPlayer.changeMoney(-(currentProperty.getStockPrice())); //nees stock value
+        menu.setPlayerInfoText(getInfo(), currentSpace.getColor());
     }
     
     public boolean canBuyStocks()
