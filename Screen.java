@@ -235,11 +235,8 @@ public class Screen extends JFrame implements ActionListener
         }
         else if(currentSpace.getClass().getName().equals("Chance"))
         {
-            //info += chance.chooseCard(currentPlayer);
-            //menu.addOutputText(chance.chooseCard(currentPlayer));
+            
         }
-        
-        
         
         return info;
     }

@@ -22,12 +22,14 @@ public class Chance extends Space
    public Chance()
     {
         //color = col;
+        super("Chance Card");
         cards = new ArrayList<String>();
         generateCards();
     }
     
     public Chance(Color col)
     {
+         super("Chance Card");
         color = col;
         cards = new ArrayList<String>();
         generateCards();
@@ -78,7 +80,7 @@ public class Chance extends Space
         cards.add("The wife popped a tire driving to come see you, thats gonna be a $50 replacement.");
         cards.add("Happy Birthday Boss! Heres $50");
         cards.add("Someone got hurt on the job, your gonna have to pay $100 for the hospital bill.");
-        cards.add("Dang sending your kids to buisnss classes is expensive, like $150 expensive.");
+        cards.add("Dang sending your kids to buisness classes is expensive, like $150 expensive.");
         cards.add("That consultancy fee you have just earned you $100!");
         cards.add("Your co-workers entered you in a beauty contentest. You came in second! Cash prize was $50");
         cards.add("Man isnt it nice to be rich? you just found $100 in your pocket!");

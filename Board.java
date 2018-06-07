@@ -148,38 +148,38 @@ public class Board extends JPanel
     public void fillSpaces()
     {
         spaces.add(new Corner(silver, "Start")); //0
-        spaces.add(new Property(60, 2, purple, null, "stuff1")); //1
+        spaces.add(new Property(60, 2, purple, null, "Yahoo")); //1
         spaces.add(new Chance(cyan)); //2
-        spaces.add(new Property(80, 4, purple, null, "stuff2")); //3
-        spaces.add(new Property(200, 50, grey, null, "railroad1")); //4
-        spaces.add(new Property(100, 6, lightBlue, null, "stuff3")); //5
+        spaces.add(new Property(80, 4, purple, null, "Uber")); //3
+        spaces.add(new Property(200, 50, grey, null, "Pay Pal")); //4
+        spaces.add(new Property(100, 6, lightBlue, null, "Acquie")); //5
         spaces.add(new Chance(cyan)); //6
-        spaces.add(new Property(100, 6, lightBlue, null, "stuff4")); //7
-        spaces.add(new Property(120, 8, lightBlue, null, "stuff5")); //8
+        spaces.add(new Property(100, 6, lightBlue, null, "RED")); //7
+        spaces.add(new Property(120, 8, lightBlue, null, "Texas Instruments")); //8
         spaces.add(new Corner(silver, "Jail")); //9
-        spaces.add(new Property(140, 10, pink, null, "stuff9"));
-        spaces.add(new Property(140, 10, pink, null, "stuff10"));
-        spaces.add(new Property(160, 12, pink, null, "stuff11"));
-        spaces.add(new Property(200, 50, grey, null, "railroad2"));
-        spaces.add(new Property(180, 14, orange, null, "stuff6"));
+        spaces.add(new Property(140, 10, pink, null, "eBay"));
+        spaces.add(new Property(140, 10, pink, null, "Qualcomm"));
+        spaces.add(new Property(160, 12, pink, null, "Cisco Systems"));
+        spaces.add(new Property(200, 50, grey, null, "Tesla"));
+        spaces.add(new Property(180, 14, orange, null, "HP Company"));
         spaces.add(new Chance(cyan));
-        spaces.add(new Property(180, 14, orange, null, "stuff7"));
-        spaces.add(new Property(200, 16, orange, null, "stuff8"));
+        spaces.add(new Property(180, 14, orange, null, "Broadcom"));
+        spaces.add(new Property(200, 16, orange, null, "Oracle"));
         spaces.add(new Corner(silver, "Free Parking"));
-        spaces.add(new Property(220, 18, red, null, "stuff13"));
-         spaces.add(new Property(220, 18, red, null, "stuff12"));
-        spaces.add(new Property(240, 20, red, null, "stuff14"));
-        spaces.add(new Property(200, 50, grey, null, "railroad3"));
-        spaces.add(new Property(260, 22, yellow, null, "stuff15"));
+        spaces.add(new Property(220, 18, red, null, "Adobe"));
+         spaces.add(new Property(220, 18, red, null, "IBM"));
+        spaces.add(new Property(240, 20, red, null, "Intel"));
+        spaces.add(new Property(200, 50, grey, null, "Space X"));
+        spaces.add(new Property(260, 22, yellow, null, "Alphabet"));
         spaces.add(new Chance(cyan));
-        spaces.add(new Property(260, 22, yellow, null, "stuff16"));
-        spaces.add(new Property(280, 24, yellow, null, "Tesla"));
+        spaces.add(new Property(260, 22, yellow, null, "Samsung"));
+        spaces.add(new Property(280, 24, yellow, null, ""));
         spaces.add(new Corner(silver, "Go to jail"));
         spaces.add(new Property(300, 26, green, null, "Facebook"));
         spaces.add(new Chance(cyan));
         spaces.add(new Property(300, 26, green, null, "Amazon"));
         spaces.add(new Property(320, 28, green, null, "Microsoft"));
-        spaces.add(new Property(200, 50, grey, null, "railroad4"));
+        spaces.add(new Property(200, 50, grey, null, "The Boring Company"));
         spaces.add(new Property(350, 35, blue, null, "Apple"));
         spaces.add(new Chance(cyan));
         spaces.add(new Property(400, 50, blue, null, "Google"));

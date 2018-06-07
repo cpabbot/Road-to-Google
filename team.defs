@@ -1,17 +1,9 @@
-#Sun Jun 03 00:05:07 EDT 2018
+#Thu Jun 07 13:17:57 EDT 2018
+bluej.teamsettings.git.protocol=https
+bluej.teamsettings.yourName=Marquis Lewis
+bluej.teamsettings.user=cpabbot
 bluej.teamsettings.groupname=
 bluej.teamsettings.git.repositoryPrefix=/cpabbot/Road-to-Google.git
-bluej.teamsettings.git.protocol=https
-bluej.teamsettings.user=cpabbot
 bluej.teamsettings.git.server=github.com
-bluej.teamsettings.yourEmail=cpabbot1@gmail.com
 bluej.teamsettings.vcs=git
-bluej.teamsettings.ignore8=\\.DS_Store
-bluej.teamsettings.yourName=Cameron Abbot
-bluej.teamsettings.ignore7=.*\\\#backup
-bluej.teamsettings.ignore6=.*\\\#
-bluej.teamsettings.ignore5=.*\\~
-bluej.teamsettings.ignore4=.*\\.ctxt
-bluej.teamsettings.ignore3=team\\.defs
-bluej.teamsettings.ignore2=bluej\\.pkh
-bluej.teamsettings.ignore1=.*\\.class
+bluej.teamsettings.yourEmail=marquistlewis@gmail.com
