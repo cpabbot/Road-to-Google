@@ -124,7 +124,7 @@ public class Screen extends JFrame implements ActionListener
         
         stocks = menu.getStocksBtn();
         stocks.addActionListener(this);
-        stocks.setActionCommand("end");
+        stocks.setActionCommand("stocks");
     }
     
     /**
@@ -165,7 +165,8 @@ public class Screen extends JFrame implements ActionListener
     public void roll() {
         currentPlayer = players.get(cpi);
         // move the player a random number of spaces 1-12 inclusive
-        int rollNum = (int)(Math.random()*12)+1;
+        int rollNum = 4;
+        /////int rollNum = (int)(Math.random()*12)+1;
         menu.addOutputText(players.get(cpi).getName() + " rolled a " + rollNum);
         roll.setEnabled(false);
         currentPlayer.moveLocation(rollNum);
@@ -268,7 +269,7 @@ public class Screen extends JFrame implements ActionListener
              for(int i = 0; i<otherPlayer.getOwnes().size(); i++)
              {
                 
-                if((otherPlayer.getOwnes().get(i).getColor() == board.getGrey())) //gry color for railroads
+                if((otherPlayer.getOwnes().get(i).getColor() == board.getGrey())) //gray color for railroads
                 {
                     count++;
                 }
@@ -293,8 +294,8 @@ public class Screen extends JFrame implements ActionListener
     }
     
     /**
-     * Changes whos
-     * sets 
+     * Changes whos turn it is
+     * sets turn back to first player after reaching the end
      */
     public void end() {
         cpi++;
@@ -314,52 +315,17 @@ public class Screen extends JFrame implements ActionListener
         return col;
     }
     
+    /**
+     * when stock button clicked
+     * -- increase number of stocks on property
+     * -- subtract cost of property from player
+     */
     public void stocks() {
         currentProperty.changeStocks(1);
-        currentPlayer.changeMoney(-(currentProperty.getStockPrice())); //nees stock value
+        currentPlayer.changeMoney(-(currentProperty.getStockPrice()));
         menu.setPlayerInfoText(getInfo(), currentSpace.getColor());
-    }
-    
-    public boolean canBuyStocks()
-    {
-        int count = 0;
-        /*for(int i = 0; i<board.getSpaces().size(); i++)
-        {
-            if(board.getSpaces().get(i).getClass().getName().equals("Property"))
-            {
-                Property space = (Property)board.getSpaces().get(i);
-                if(space.getOwnership() == currentPlayer)
-                {
-                    
-                }
-            }
-        } */
-        for(int i = 0; i<currentPlayer.getOwnes().size(); i++)
-        {
-            for(int j = i+1; i<currentPlayer.getOwnes().size(); j++)
-            {
-                if(currentPlayer.getOwnes().get(i).getColor()
-                             == currentPlayer.getOwnes().get(j).getColor())
-                {
-                    count++;
-                }
-                if(currentPlayer.getOwnes().get(i).getColor() == board.getPurple() && count == 1) //color purple
-                {
-                    return true;
-                }
-                if(currentPlayer.getOwnes().get(i).getColor() == board.getBlue() && count == 1) //color blue
-                {
-                    return true;
-                }
-                if(count == 2)
-                {
-                    return true;
-                }
-                
-            }
-            count = 0;
-        }
-        return false;
+        
+        stocks.setEnabled(false);
     }
     
     public int getScreenWidth() { return WIDTH; }

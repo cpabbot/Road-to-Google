@@ -63,16 +63,28 @@ public class Property extends Space
             window.drawRect(x+5,y+5,width-10,height-10);
         }
         // draw stocks
-        window.setColor(Color.BLACK);
+        int stockSize = 25;
         for(int i=0; i<stocks; i++) {
             if(side == 0) { // top
-                window.fillRect(x+12*i,y+(int)(0.75*height),10,10);
+                window.setColor(Color.BLACK);
+                window.drawRect(x+(int)(0.25*width),y+(int)(stockSize+5)*i+(int)(height*.1),stockSize,stockSize);
+                window.setColor(color);
+                window.fillRect(x+(int)(0.25*width),y+(int)(stockSize+5)*i+(int)(height*.1),stockSize,stockSize);
             } else if(side == 1) { // right
-                window.fillRect(x,y,10,10);
+                window.setColor(Color.BLACK);
+                window.drawRect(x+(int)(0.25*width)+(stockSize+5)*i,y+(int)(0.25*height),stockSize,stockSize);
+                window.setColor(color);
+                window.fillRect(x+(int)(0.25*width)+(stockSize+5)*i,y+(int)(0.25*height),stockSize,stockSize);
             } else if(side == 2) { // bottom
-                window.fillRect(x,y,10,10);
+                window.setColor(Color.BLACK);
+                window.drawRect(x+(int)(0.25*width),y+(int)(0.25*height)+(stockSize+5)*i,stockSize,stockSize);
+                window.setColor(color);
+                window.fillRect(x+(int)(0.25*width),y+(int)(0.25*height)+(stockSize+5)*i,stockSize,stockSize);
             } else if(side == 3) { // left
-                window.fillRect(x+(int)(0.75*width),y,10,10);
+                window.setColor(Color.BLACK);
+                window.drawRect(x+(int)(0.1*width)+(stockSize+5)*i,y+(int)(0.25*height),stockSize,stockSize);
+                window.setColor(color);
+                window.fillRect(x+(int)(0.1*width)+(stockSize+5)*i,y+(int)(0.25*height),stockSize,stockSize);
             }
         }
     }
