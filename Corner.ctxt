@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Corner
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Corner\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Corner\ draws\ corner\ spaces\ and\ implements\ their\ functions\r\n\r\n\ Marquis\ and\ Cameron's\ super\ cool\ project\r\n\ v0.1\ pre-Alpha\ unreleased\r\n\ Spring\ 2018\r\n\ AP\ Computer\ Science\ A\ final\ project\r\n
 comment1.params=col\ str
 comment1.target=Corner(java.awt.Color,\ java.lang.String)
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Corner\r\n
@@ -9,4 +9,5 @@ comment2.target=void\ draw(java.awt.Graphics,\ int,\ int,\ int,\ int,\ int)
 comment2.text=\r\n\ Draws\ the\ appropriate\ cornwe\ space\ on\ the\ board\r\n\ @x\ x\ position\ on\ frame\r\n\ @y\ y\ position\ on\ frame\r\n
 comment3.params=p1
 comment3.target=void\ act(Player)
+comment3.text=\r\n\ Based\ on\ the\ String\ variable\ iAm\ the\ space\ will\ cause\ its\ proper\ effect\ to\ the\ player\r\n\ If\ properlu\ implemented\:\r\n\ if\ iAm\ equals\ Jail\ the\ player\ will\ lose\ a\ 3\ of\ their\ next\ turns\r\n\ if\ iAm\ equals\ Free\ parking\ the\ player\ will\ recieve\ the\ money\ accumulated\ at\ Free\ Parking\r\n\ if\ iAm\ equal\ Go\ to\ Jail\ the\ players\ position\ will\ change\ to\ be\ at\ jail\r\n\r\n
 numComments=4

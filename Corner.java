@@ -3,18 +3,18 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.BasicStroke;
 /**
- * Write a description of class Corner here.
+ * Corner draws corner spaces and implements their functions
  *
- * @author (your name)
- * @version (a version number or a date)
+ * Marquis and Cameron's super cool project
+ * v0.1 pre-Alpha unreleased
+ * Spring 2018
+ * AP Computer Science A final project
  */
 public class Corner extends Space
 {
-    // instance variables - replace the example below with your own
-    //private int x;
-    //private int y, height, width;
     private Color color;
     private String iAm;
+    
     /**
      * Constructor for objects of class Corner
      */
@@ -36,7 +36,15 @@ public class Corner extends Space
         window.setColor(color);
         window.fillRect(x,y,width,height);
     }
-    
+   
+    /**
+     * Based on the String variable iAm the space will cause its proper effect to the player
+     * If properlu implemented:
+     * if iAm equals Jail the player will lose a 3 of their next turns
+     * if iAm equals Free parking the player will recieve the money accumulated at Free Parking
+     * if iAm equal Go to Jail the players position will change to be at jail
+     *
+     */
    public void act(Player p1)
    {
        if(iAm.equals("Start"))
