@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * The Chance class genrates a list of cards to inflict its proper affect to the Player 
+ * Write a description of class Chance here.
  *
  * Marquis and Cameron's super cool project
  * v0.1 pre-Alpha unreleased
@@ -18,11 +18,7 @@ public class Chance extends Space
     private Color color;
     private ArrayList<String> cards;
     private Player player;
-   
-   /**
-     * This is the constructor for the Chance class
-     * 
-     */
+   // private int numCards;
    public Chance()
     {
         //color = col;
@@ -31,11 +27,6 @@ public class Chance extends Space
         generateCards();
     }
     
-     /**
-     * This is the constructor for the Chance class
-     * @param col sets color of Chance card
-     * 
-     */
     public Chance(Color col)
     {
          super("Chance Card");
@@ -75,27 +66,26 @@ public class Chance extends Space
      */
     public void generateCards()
     {
-        cards.add("A good CEO knows there's no way to avoid taxes, got to pay $150.");
-        cards.add("Promotion! Promotion! Promotion! Nice job, here's a $150 Bonus!");
-        cards.add("The ceilings are leaking in your buildings, it's gonna be $100 in repairs. Sorry.");
-        cards.add("You won CEO of the year! It came with a $200 cash prize.");
-        cards.add("Um, there were some banking errors and you somehow lost $200...sorry.");
-        cards.add("We are gonna have to fix that smile for the meeting today, pay $50 for the dentist.");
-        cards.add("Investing stocks into your own company was a good idea, you earned $50.");
+        //cards.add("Your buisness looks like it needs a restart, go to start and try again!");
+        //cards.add("Your making really bad buisness moves man, go back 3 spaces.");
+        cards.add("A good CEO knows theres no way to avoid taxes, got to pay $150");
+        cards.add("Promotion! Promotion! Promotion! Nice job, heres a $150 Bonus!");
+        cards.add("The ceilings are leaking in your buildings, it's gonna be $100 in repairs. Sorry");
+        cards.add("You won CEO of the year! It came with a $200 cash prize");
+        cards.add("Um, there was some banking errors and you some how lost $200...sorry.");
+        cards.add("We are gonna have to fix that smile for the meeting today, pay $50 for the dentist");
+        cards.add("Investing stocks into your own company was a good idea, you earned $50");
         cards.add("Every buisness man needs a night out to a concert, but you got to pay for good seats. It's gonna be $150 for the front row.");
         cards.add("The employees liked you enough to give you a $150 christmas card. Nice job boss!");
         cards.add("The wife popped a tire driving to come see you, thats gonna be a $50 replacement.");
-        cards.add("Happy Birthday Boss! Here's $50.");
-        cards.add("Someone got hurt on the job, you're gonna have to pay $100 for the hospital bill.");
+        cards.add("Happy Birthday Boss! Heres $50");
+        cards.add("Someone got hurt on the job, your gonna have to pay $100 for the hospital bill.");
         cards.add("Dang sending your kids to buisness classes is expensive, like $150 expensive.");
         cards.add("That consultancy fee you have just earned you $100!");
         cards.add("Your co-workers entered you in a beauty contentest. You came in second! Cash prize was $50");
-        cards.add("Man isn't it nice to be rich? You just found $100 in your pocket!");
+        cards.add("Man isnt it nice to be rich? you just found $100 in your pocket!");
     }
     
-    /**
-     * Based of random number generated to decide action 
-     */
     public void applyAction(int ran, Player p1)
     {
         if( ran == 0)

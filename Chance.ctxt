@@ -1,12 +1,10 @@
 #BlueJ class context
 comment0.target=Chance
-comment0.text=\r\n\ The\ Chance\ class\ genrates\ a\ list\ of\ cards\ to\ inflict\ its\ proper\ affect\ to\ the\ Player\ \r\n\r\n\ Marquis\ and\ Cameron's\ super\ cool\ project\r\n\ v0.1\ pre-Alpha\ unreleased\r\n\ Spring\ 2018\r\n\ AP\ Computer\ Science\ A\ final\ project\r\n
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Chance\ here.\r\n\r\n\ Marquis\ and\ Cameron's\ super\ cool\ project\r\n\ v0.1\ pre-Alpha\ unreleased\r\n\ Spring\ 2018\r\n\ AP\ Computer\ Science\ A\ final\ project\r\n
 comment1.params=
 comment1.target=Chance()
-comment1.text=\r\n\ This\ is\ the\ constructor\ for\ the\ Chance\ class\r\n\ \r\n
 comment2.params=col
 comment2.target=Chance(java.awt.Color)
-comment2.text=\r\n\ This\ is\ the\ constructor\ for\ the\ Chance\ class\r\n\ @param\ col\ sets\ color\ of\ Chance\ card\r\n\ \r\n
 comment3.params=window\ x\ y\ width\ height\ side
 comment3.target=void\ draw(java.awt.Graphics,\ int,\ int,\ int,\ int,\ int)
 comment3.text=\r\n\ Draws\ the\ appropriate\ property\ space\ on\ the\ board\r\n\ @x\ x\ position\ on\ frame\r\n\ @y\ y\ position\ on\ frame\r\n
@@ -18,7 +16,6 @@ comment5.target=void\ generateCards()
 comment5.text=\r\n\ Fills\ list\ of\ String\ cards\ \r\n
 comment6.params=ran\ p1
 comment6.target=void\ applyAction(int,\ Player)
-comment6.text=\r\n\ Based\ of\ random\ number\ generated\ to\ decide\ action\ \r\n
 comment7.params=ran
 comment7.target=java.lang.String\ sayAction(int)
 numComments=8

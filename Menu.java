@@ -13,7 +13,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * Menu class adds JPanels, JTextArea, JButtons to game window
+ * Write a description of class Menu here.
  *
  * Marquis and Cameron's super cool project
  * v0.1 pre-Alpha unreleased

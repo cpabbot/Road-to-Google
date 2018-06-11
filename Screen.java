@@ -12,7 +12,6 @@ import java.util.List;
 
 /**
  * Adds frame for graphics
- * Contains main method that runs project
  *
  * Marquis and Cameron's super cool project
  * v0.1 pre-Alpha unreleased
@@ -42,9 +41,6 @@ public class Screen extends JFrame implements ActionListener
     private static Space currentSpace;
     private static Property currentProperty;
     
-     /**
-     * This is the constructor for the Screen Class
-     */
     public Screen()
     {
         super("Road to Google");
@@ -73,9 +69,6 @@ public class Screen extends JFrame implements ActionListener
         addButtonListeners();
     }
     
-     /**
-     * Main method that will run program
-     */
     public static void main(String args[]) {
         Scanner s = new Scanner(System.in);
         System.out.println("Welcome to our game!!!\n");
@@ -172,8 +165,8 @@ public class Screen extends JFrame implements ActionListener
     public void roll() {
         currentPlayer = players.get(cpi);
         // move the player a random number of spaces 1-12 inclusive
-        
-        int rollNum = (int)(Math.random()*12)+1;
+        int rollNum = 4;
+        /////int rollNum = (int)(Math.random()*12)+1;
         menu.addOutputText(players.get(cpi).getName() + " rolled a " + rollNum);
         roll.setEnabled(false);
         currentPlayer.moveLocation(rollNum);
@@ -219,9 +212,6 @@ public class Screen extends JFrame implements ActionListener
         menu.setPlayerInfoText(getInfo(), currentSpace.getColor());
     }
     
-     /**
-     * Returns information about the Player and the space the player is currently on
-     */
     public String getInfo() {
         String info = currentPlayer.getName() + " ~ $" + currentPlayer.getMoney();
         info += "\n" + currentSpace.getName() + " (" + currentSpace.getClass().getName() + ")";
@@ -312,10 +302,6 @@ public class Screen extends JFrame implements ActionListener
         start();
     }
     
-    /**
-     * Returns Color based on String param colStr 
-     * @colStr - the string that will be converted to color
-     */
     public static Color getColor(String colStr) {
         Color col = Color.BLACK;
         for(int i = 0; i < colorStrings.length; i++) {
@@ -339,13 +325,6 @@ public class Screen extends JFrame implements ActionListener
         stocks.setEnabled(false);
     }
     
-    /**
-     * Returns int width
-     */
     public int getScreenWidth() { return WIDTH; }
-    
-    /**
-     * Returns int height
-     */
     public int getScreenHeight() { return HEIGHT; }
 }
