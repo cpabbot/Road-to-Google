@@ -260,6 +260,7 @@ public class Screen extends JFrame implements ActionListener
         currentPlayer.changeMoney(-((Property)currentSpace).getPrice()); //subtracts value of property from Player money
         menu.setPlayerInfoText(getInfo(), currentSpace.getColor());
         currentPlayer.buyProperty((Property)currentSpace);
+        menu.addOutputText(currentPlayer.getName() + " just bought " + currentSpace.getName() + " for $" + ((Property)currentSpace).getPrice());
         
         buy.setEnabled(false);
         end.setEnabled(true);
