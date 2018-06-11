@@ -8,8 +8,9 @@ import java.util.ArrayList;
 import java.awt.Dimension;
 
 /**
- * Write a description of class Board here.
- *
+ * JPanel that contains all the GUI for the board
+ * the board contains a list of spaces
+ * 
  * Marquis and Cameron's super cool project
  * v0.1 pre-Alpha unreleased
  * Spring 2018
@@ -38,15 +39,24 @@ public class Board extends JPanel
         this(300, null);
     }
     
+    /**
+     * Constructs a board
+     * @param theSize the width and height of the board (which is a square)
+     * @param thePlayers the list of players
+     */
     public Board(int theSize, ArrayList<Player> thePlayers) {
         super();
         players = thePlayers;
         setPreferredSize(new Dimension(theSize,theSize));
-        //setSize(theSize, theSize);
         size = theSize;
         fillSpaces(); //fills arrayList spaces
     }
     
+    /**
+     * Paints the GUI
+     * -- draws each space on the board
+     * -- draws each player on the board
+     */
     public void paintComponent(Graphics window) {
         super.paintComponent(window);
         
@@ -56,6 +66,10 @@ public class Board extends JPanel
         drawPlayers(window);
     }
     
+    /**
+     * Draws the players on the board based on the players' locations and the x and y coords of each space
+     * @param window the Graphics object to draw on
+     */
     public void drawPlayers(Graphics window) {
         int spaceX, spaceY;
         for(Player p : players) {
@@ -187,6 +201,9 @@ public class Board extends JPanel
         
     }
     
+    /**
+     * @return the ArrayList of Space objects
+     */
     public ArrayList<Space> getSpaces()
     {
         return spaces;
